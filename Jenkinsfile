@@ -15,6 +15,6 @@ pipeline {
   }
     post {
       always {
-          archiveArtifacts artifacts: 'frontend.zip', fingerprint: true
+          archiveArtifacts artifacts: 'frontend/frontend.zip', fingerprint: true
       }
   }
