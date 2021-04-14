@@ -13,8 +13,8 @@ pipeline {
           }
         }
   }
-  //   post {
-  //     always {
-  //         archiveArtifacts artifacts: 'frontend.zip', fingerprint: true
-  //     }
-  // }
+    post {
+      always {
+          archiveArtifacts artifacts: 'frontend.zip', fingerprint: true
+      }
+  }
