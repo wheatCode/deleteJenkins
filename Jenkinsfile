@@ -3,14 +3,14 @@ pipeline {
   stages { 
         stage('Deploy') {
           steps {
-              zip zipFile: 'frontend.zip', archive: true, dir: ''
+              zip zipFile: "frontend.zip", archive: true, dir: ""
               sh 'ls -al'
             }
           }
         }
     post {
       always {
-          archiveArtifacts artifacts: 'frontend.zip', fingerprint: true
+          archiveArtifacts artifacts: "frontend.zip", fingerprint: true
       }
   }      
   }
