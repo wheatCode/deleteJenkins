@@ -3,9 +3,7 @@ pipeline {
   stages { 
         stage('Deploy') {
           steps {
-              // zip dir: "",glob: '',zipFile: "frontend.zip", archive: true
-              zip
-              sh 'ls -al'
+              zip dir: "",glob: '',zipFile: "frontend.zip", archive: true
             }
           }
         }
