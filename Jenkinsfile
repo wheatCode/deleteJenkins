@@ -3,13 +3,12 @@ pipeline {
   stages { 
         stage('Deploy') {
           steps {
-              sh "cd .."
+
+              sh 'mkdir -p frontend'
+              script{
+                zip zipFile: 'frontend.zip', archive: false, dir: 'frontend'
+              }
               sh 'ls -al'
-              // sh 'mkdir -p frontend'
-              // script{
-              //   zip zipFile: 'frontend.zip', archive: false, dir: './'
-              // }
-              // sh 'ls -al'
             }
           }
         }
