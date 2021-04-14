@@ -4,9 +4,8 @@ pipeline {
         stage('Deploy') {
           steps {
               sh 'ls -al'
-            sshagent (['10.2.9.100']) {
-              sh "ssh root@10.2.9.100"
-              sh "ls -al"
+              zip zipFile: 'frontend.zip', archive: false, dir: './'
+              sh 'ls -al'
             }
           }
         }
