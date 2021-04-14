@@ -4,7 +4,7 @@ pipeline {
         stage('Deploy') {
           steps {
               // zip dir: "",glob: '',zipFile: "frontend.zip", archive: true
-              zip dir: '/home/workspace', glob: '', zipFile: 'TEST.zip'
+              zip
               sh 'ls -al'
             }
           }
