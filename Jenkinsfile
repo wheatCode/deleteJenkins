@@ -9,12 +9,9 @@ pipeline {
                 zip zipFile: 'frontend.zip', archive: false, dir: 'frontend'
               }
               sh 'ls -al'
+              sh 'cd frontend'
+                   sh 'ls -al'
             }
           }
         }
-            post {
-      always {
-          archiveArtifacts artifacts: 'frontend/frontend.zip', fingerprint: true
-      }
-  }
   }
