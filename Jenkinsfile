@@ -12,9 +12,9 @@ pipeline {
             }
           }
         }
-  }
-    post {
+            post {
       always {
           archiveArtifacts artifacts: 'frontend/frontend.zip', fingerprint: true
       }
+  }
   }
