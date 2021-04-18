@@ -4,7 +4,7 @@ pipeline {
         stage('Deploy') {
           steps {
                 sshagent (credentials: ['100-monosparta-loadbalancer']) {
-                // sh "ssh -T deploy@10.2.9.100"
+                sh "ssh  -o StrictHostKeyChecking=no -T deploy@10.2.9.100"
                 sh "ls -al"
               }
             }
