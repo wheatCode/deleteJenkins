@@ -3,13 +3,11 @@ pipeline {
   stages { 
         stage('Deploy') {
           steps {
-              zip dir: "",glob: '',zipFile: "frontend.zip", archive: true
+                sshagent (credentials: ['100-monosparta-loadbalancer']) {
+                sh "ssh deploy@10.2.9.100"
+                sh "ls -al"
+              }
             }
           }
-        }
-    post {
-      always {
-          archiveArtifacts artifacts: "frontend.zip", fingerprint: true
-      }
-  }      
+        }    
   }
