@@ -6,11 +6,7 @@ pipeline {
              sh "echo 1 > build/a.txt"
               sshagent (credentials: ['100-monosparta-loadbalancer']) {
                 sh "scp -r build deploy@10.2.9.110:~/"
-                sh """
-                    ssh -o StrictHostKeyChecking=no -T deploy@10.2.9.110
-                    sudo mv ~/build /var/www/gohiking-web
-                    exit
-                   """
+                sh "ssh -o StrictHostKeyChecking=no -T deploy@10.2.9.110 'sudo mv ~/build /var/www/gohiking-web'"
               }
             }
           }
