@@ -3,8 +3,7 @@ pipeline {
   stages { 
         stage('Deploy') {
           steps {
-             sh "mkdir build"
-             sh "echo 1 > a.txt"
+             sh "echo 1 > build/a.txt"
               sshagent (credentials: ['100-monosparta-loadbalancer']) {
                 sh "ssh -o StrictHostKeyChecking=no -T deploy@10.2.9.110"
                 sh "ssh -v deploy@10.2.9.110"
