@@ -8,8 +8,7 @@ pipeline {
                 sh "scp -r build deploy@10.2.9.110:~/"
                 sh """
                 ssh -o StrictHostKeyChecking=no -T deploy@10.2.9.110  << EOF
-                sudo -S mv ~/build /var/www/gohiking-web
-                deploy
+                cho deploy | sudo -S mv ~/build /var/www/gohiking-web
                 exit
                 """
               }
